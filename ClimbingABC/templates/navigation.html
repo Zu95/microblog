@@ -1,0 +1,39 @@
+
+<section id="dropdown-menu-0" data-rv-view="262">
+
+    <nav class="navbar navbar-dropdown transparent navbar-fixed-top bg-color">
+
+        <div class="container">
+
+            <div class="navbar-brand">
+                <a href="index.html" class="navbar-logo"><img src="http://wierzba.wzks.uj.edu.pl/~15_krzysztofik/Licencjat%20demo/assets/images/rappelling-153613-64x128.png" alt=""></a>
+                <a class="text-black" href="#">PORADNIK WSPINACZA</a>
+            </div>
+
+            <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                <div class="hamburger-icon"></div>
+            </button>
+
+            <ul class="nav-dropdown collapse pull-xs-right navbar-toggleable-sm nav navbar-nav" id="exCollapsingNavbar">
+
+            <li class="nav-item"><a class="nav-link link" href="#">Strona główna</a></li>
+
+            <li class="nav-item dropdown"><a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="#" aria-expanded="false">Kategorie</a>
+                    <div class="dropdown-menu">
+                        {% for category in categories %}
+                            <a class="dropdown-item" href="#">{{ category.name }}</a>
+                        {% endfor %}
+                    </div>
+            </li>
+            <li class="nav-item dropdown open"><a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="#" aria-expanded="true">O projekcie</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Źródła informacji</a>
+                    <a class="dropdown-item" href="#">O mnie</a></div>
+            </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+</section>

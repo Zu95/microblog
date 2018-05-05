@@ -1,0 +1,68 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block home %}
+    <title>Poradnik wspinacza</title>
+{% endblock %}
+{% block navigation %}
+{% include 'navigation.html' with categories=categories %}
+{% endblock %}
+{% block content %}
+    {% block slider %}
+    {% include 'slider.html' %}
+    {% endblock %}
+
+
+{% block categories %}
+<section class="mbr-section mbr-section-small" id="msg-box2-13" data-rv-view="382" style="background-color: rgb(242, 242, 242); padding-top: 0rem; padding-bottom: 0rem;">
+
+    <div class="container">
+        <div class="row">
+
+            <div>
+
+                <div class="col-sm-8">
+                    <h2 class="mbr-section-title h1">Kategorie</h2>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section mbr-section-small" id="features1-m" data-rv-view="264" style="background-color: rgb(255, 255, 255); padding-top: 4.5rem; padding-bottom: 0rem;">
+
+    <div class="container">
+        <div class="row">
+
+            {% for category in categories %}
+                <div class="col-sm-6 col-md-4">
+                <div class="card cart-block">
+                    <div><img src="{{ category.picture.url }}" class="card-img-top"></div>
+                    <div class="card-block">
+                        <h4 class="card-title text-xs-center">{{ category.name }}</h4>
+                        <p class="card-text">{{ category.description }}</p>
+                        <div class="text-xs-center"><a href="category/{{ category.id }}" class="btn btn-secondary-outline">Zobacz</a></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+    {% endblock %}
+
+{% block gallery %}
+    {% include 'gallery.html' %}
+{% endblock %}
+
+
+<section class="mbr-section mbr-parallax-background col-undefined" id="content5-8" data-rv-view="291" style="background-image: url(http://wierzba.wzks.uj.edu.pl/~15_krzysztofik/Licencjat%20demo/assets/images/austin-schmid-134030-unsplash-2000x1333.jpg); padding-top: 9rem; padding-bottom: 9rem;">
+    <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(255, 255, 255);"></div>
+    <div class="container">
+        <h3 class="mbr-section-title display-2">Praca licencjacka</h3>
+        <div class="lead">Portal jest integralną częścią pracy licencjackiej...</div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block home %}
+    <title>{{ current_category.name }}</title>
+{% endblock %}
+{% block navigation %}
+{% include 'navigation.html' with categories=categories %}
+{% endblock %}
+{% block content %}
+
+    <section class="mbr-section mbr-section-small mbr-parallax-background mbr-after-navbar" id="msg-box2-d" data-rv-view="143" style="background-image: url({{ current_category.picture.url }}); padding-top: 4.5rem; padding-bottom: 4.5rem;">
+        <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(230, 224, 220);"></div>
+    </section>
+
+
+    <section class="mbr-section mbr-section-nopadding" id="msg-box4-j" data-rv-view="146" style="background-color: rgb(255, 255, 255); padding-top: 0rem; padding-bottom: 0rem;">
+    {% block breadcrumbs %}
+        <div class="container">
+            <div class="col-sm-8 mbr-inner-padding mbr-table-cell-lg">
+                <p><a href="#">Home</a> &gt; {{ current_category.name }}</p>
+            </div>
+        </div>
+    {% endblock %}
+
+        {% block articles %}
+            {% for post in posts %}
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-xs-12 col-lg-3 mbr-inner-padding text-xs-center mbr-table-cell-lg">
+                            <h3 class="mbr-section-title display-4">{{ post.title }}</h3>
+                            <div class="lead"><p>{{ post.brief }}</p></div>
+                            <div><a class="btn btn-lg btn-secondary-outline" href="/{{ post.id }}">Czytaj dalej</a></div>
+                        </div>
+                        <div class="col-xs-12 col-lg-9 mbr-table-cell-lg image-size" style="width: 32%;">
+                            <div class="mbr-figure"><img src="{{ post.picture.url }}"></div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endblock %}
+    </section>
+{% endblock %}
