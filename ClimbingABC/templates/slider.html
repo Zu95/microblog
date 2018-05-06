@@ -1,5 +1,5 @@
 {% block slider %}
-            <section class="mbr-slider mbr-section mbr-section__container carousel slide mbr-section-nopadding mbr-after-navbar" data-ride="carousel" data-keyboard="false" data-wrap="true" data-interval="5000" id="slider-1" data-rv-view="250" style="background-color: rgb(255, 255, 255);">
+<section class="mbr-slider mbr-section mbr-section__container carousel slide mbr-section-nopadding mbr-after-navbar" data-ride="carousel" data-keyboard="false" data-wrap="true" data-interval="5000" id="slider-1" data-rv-view="250" style="background-color: rgb(255, 255, 255);">
     <div>
         <div>
             <div>
@@ -7,53 +7,26 @@
                     <li data-app-prevent-settings="" data-target="#slider-1" data-slide-to="0" class="active"></li><li data-app-prevent-settings="" data-target="#slider-1" data-slide-to="1"></li><li data-app-prevent-settings="" data-target="#slider-1" class="" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner" role="listbox">
-                    <div class="mbr-section carousel-item dark center mbr-section-full active" style="background-image: url(assets/images/tommy-lisbin-284351-unsplash-2000x1333.jpg);">
-                        <div class="mbr-table-cell">
-                         <div class="mbr-overlay" style="opacity: 0.3;"></div>
-                            <div class=" container">
+                    {% for post in newest_posts %}
+                        <div class="mbr-section carousel-item dark center mbr-section-full {% if forloop.first %}active{% endif %}" style="background-image: url({{ post.picture.url }});">
+                            <div class="mbr-table-cell">
+                             <div class="mbr-overlay" style="opacity: 0.6;"></div>
+                                <div class=" container">
+                                    <div class="row">
+                                        <div class="col-md-8 col-md-offset-1">
+                                            <h2 class="mbr-section-title display-1">{{ post.title }}</h2>
+                                            <p class="lead">{{ post.brief }}</p>
 
-                                <div class="row">
-                                    <div class="col-md-8 col-md-offset-1">
-                                        <h2 class="mbr-section-title display-1">Wspinaczka wielowyciągowa</h2>
-                                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-
-                                        <div> <a class="btn btn-lg btn-secondary-outline" href="page3.html">Czytaj dalej...</a></div>
+                                            <div> <a class="btn btn-lg btn-secondary-outline" href="page3.html">Czytaj dalej...</a></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div><div class="mbr-section carousel-item dark center mbr-section-full" style="background-image: url(assets/images/roya-ann-miller-325260-unsplash-2000x1333.jpg);">
-                        <div class="mbr-table-cell">
-                         <div class="mbr-overlay" style="opacity: 0.3;"></div>
-                            <div class=" container">
+                    {% endfor %}
 
-                                <div class="row">
-                                    <div class="col-md-8 col-md-offset-1">
-                                        <h2 class="mbr-section-title display-1">Pierwszy raz na ściance wspinaczkowej</h2>
-                                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-
-                                        <div> <a class="btn btn-lg btn-secondary-outline" href="page3.html">Czytaj dalej...</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="mbr-section carousel-item dark center mbr-section-full" style="background-image: url(assets/images/robert-baker-522731-unsplash-2000x1325.jpg);">
-                        <div class="mbr-table-cell">
-                         <div class="mbr-overlay" style="opacity: 0.3;"></div>
-                            <div class=" container">
-
-                                <div class="row">
-                                    <div class="col-md-8 col-md-offset-1">
-                                        <h2 class="mbr-section-title display-1">Wspinanie zimowe</h2>
-                                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-
-                                        <div> <a class="btn btn-lg btn-secondary-outline" href="page3.html">Czytaj dalej...</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+            </div>
 
                 <a data-app-prevent-settings="" class="left carousel-control" role="button" data-slide="prev" href="#slider-1">
                     <span class="icon-prev" aria-hidden="true"></span>

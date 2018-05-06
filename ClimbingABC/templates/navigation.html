@@ -6,8 +6,8 @@
         <div class="container">
 
             <div class="navbar-brand">
-                <a href="index.html" class="navbar-logo"><img src="http://wierzba.wzks.uj.edu.pl/~15_krzysztofik/Licencjat%20demo/assets/images/rappelling-153613-64x128.png" alt=""></a>
-                <a class="text-black" href="#">PORADNIK WSPINACZA</a>
+                <a href="{% url 'index' %}" class="navbar-logo"><img src="http://wierzba.wzks.uj.edu.pl/~15_krzysztofik/Licencjat%20demo/assets/images/rappelling-153613-64x128.png" alt=""></a>
+                <a class="text-black" href="{% url 'index' %}">PORADNIK WSPINACZA</a>
             </div>
 
             <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
@@ -16,12 +16,12 @@
 
             <ul class="nav-dropdown collapse pull-xs-right navbar-toggleable-sm nav navbar-nav" id="exCollapsingNavbar">
 
-            <li class="nav-item"><a class="nav-link link" href="#">Strona główna</a></li>
+            <li class="nav-item"><a class="nav-link link" href="{% url 'index' %}">Strona główna</a></li>
 
             <li class="nav-item dropdown"><a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="#" aria-expanded="false">Kategorie</a>
                     <div class="dropdown-menu">
                         {% for category in categories %}
-                            <a class="dropdown-item" href="#">{{ category.name }}</a>
+                            <a class="dropdown-item" href="{% url 'category' category_id=category.id %}">{{ category.name }}</a>
                         {% endfor %}
                     </div>
             </li>

@@ -1,0 +1,25 @@
+<section class="mbr-section mbr-section-small" id="features1-m" data-rv-view="264" style="background-color: rgb(255, 255, 255); padding-top: 4.5rem; padding-bottom: 0rem;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2 class="mbr-section-title h1">Kategorie</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% for category in categories %}
+                <div class="col-sm-6 col-md-4">
+                <div class="card cart-block">
+                    <div><img src="{{ category.picture.url }}" class="card-img-top"></div>
+                    <div class="card-block">
+                        <h4 class="card-title text-xs-center">{{ category.name }}</h4>
+                        <p class="card-text">{{ category.description }}</p>
+                        <div class="text-xs-center"><a href="category/{{ category.id }}" class="btn btn-secondary-outline">Zobacz</a></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

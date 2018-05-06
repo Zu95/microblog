@@ -18,7 +18,7 @@
     {% block breadcrumbs %}
         <div class="container">
             <div class="col-sm-8 mbr-inner-padding mbr-table-cell-lg">
-                <p><a href="#">Home</a> &gt; {{ current_category.name }}</p>
+                <p><a href="{% url 'index' %}">Home</a> &gt; {{ current_category.name }}</p>
             </div>
         </div>
     {% endblock %}
@@ -27,11 +27,10 @@
             {% for post in posts %}
                 <div class="container">
                     <div class="row">
-
                         <div class="col-xs-12 col-lg-3 mbr-inner-padding text-xs-center mbr-table-cell-lg">
                             <h3 class="mbr-section-title display-4">{{ post.title }}</h3>
                             <div class="lead"><p>{{ post.brief }}</p></div>
-                            <div><a class="btn btn-lg btn-secondary-outline" href="/{{ post.id }}">Czytaj dalej</a></div>
+                            <div><a class="btn btn-lg btn-secondary-outline" href="{% url 'article' category_id=current_category.id post_id=post.id %}">Czytaj dalej</a></div>
                         </div>
                         <div class="col-xs-12 col-lg-9 mbr-table-cell-lg image-size" style="width: 32%;">
                             <div class="mbr-figure"><img src="{{ post.picture.url }}"></div>
