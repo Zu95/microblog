@@ -1,0 +1,48 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block home %}
+    <title>Zadaj pytanie instruktorowi wspinania</title>
+{% endblock %}
+{% block navigation %}
+{% include 'navigation.html' with categories=categories %}
+{% endblock %}
+{% block content %}
+    <section class="mbr-section mbr-section-small mbr-parallax-background mbr-after-navbar" id="msg-box2-d" data-rv-view="143" style="background-image: url(http://wierzba.wzks.uj.edu.pl/~15_krzysztofik/Licencjat%20demo/assets/images/austin-schmid-134030-unsplash-2000x1333.jpg); padding-top: 4.5rem; padding-bottom: 4.5rem;">
+        <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(230, 224, 220);"></div>
+    </section>
+        <section class="mbr-section mbr-section-nopadding" id="msg-box4-j" data-rv-view="146" style="background-color: rgb(255, 255, 255); padding-top: 0rem; padding-bottom: 0rem;">
+    {% block breadcrumbs %}
+        <div class="container">
+            <div class="col-sm-8 mbr-inner-padding mbr-table-cell-lg">
+                <p><a href="{% url 'index' %}">Home</a> &gt; Zadaj pytanie instruktorowi</p>
+            </div>
+        </div>
+    {% endblock %}
+        </section>
+    {% block form %}
+        <section class="mbr-section mbr-section__container mbr-section__container--middle" id="content1-10" data-rv-view="352">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h3 class="mbr-section-title display-4">Zadaj pytanie instruktorowi wspinania</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 lead">
+                        <form method="POST" class="post-form">{% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="save btn btn-default">Wyślij</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endblock %}
+    {% block categories %}
+        {% include 'categories.html' with categories=categories %}
+    {% endblock %}
+
+{% endblock %}

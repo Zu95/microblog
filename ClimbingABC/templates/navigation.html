@@ -25,6 +25,11 @@
                         {% endfor %}
                     </div>
             </li>
+            <li class="nav-item dropdown open"><a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="#" aria-expanded="true">Zapytaj instruktora</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'question' %}">Zadaj pytanie</a>
+                    <a class="dropdown-item" href="{% url 'questionanswers' %}">Pytania i odpowiedzi</a></div>
+            </li>
             <li class="nav-item dropdown open"><a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="#" aria-expanded="true">O projekcie</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Źródła informacji</a>

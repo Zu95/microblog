@@ -32,3 +32,21 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class QuestionAnswer(models.Model):
+    question = models.TextField()
+    author = models.CharField(max_length=100)
+    asked_date = models.DateTimeField(default=timezone.now)
+    answer = models.TextField(default=None, null=True)
+    published = models.BooleanField(default=False)
+
+    def ask(self):
+        self.save()
+
+    def publish(self):
+        self.published = True
+        self.save()
+
+    def __str__(self):
+        return self.author
