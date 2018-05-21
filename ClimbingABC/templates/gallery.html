@@ -13,18 +13,16 @@
     </div>
     <div>
         <div class=" mbr-gallery-layout-default">
-            <div>
-                <div>
+
                     {% for item in gallery %}
                     <div class="mbr-gallery-item">
-                        <a data-toggle="modal" href="#lb-gallery1-6" data-slide-to="{{ forloop.counter }}">
+                        <a data-toggle="modal" href="#lb-gallery1-6" data-slide-to="{{ forloop.counter|add:-1 }}">
                             <img alt="" src="{{ item.picture.url }}">
                             <span class="icon fa fa-search-plus"></span>
                         </a>
                     </div>
                     {% endfor %}
-                </div>
-            </div>
+
             <div class="clearfix"></div>
         </div>
     </div>
@@ -38,7 +36,6 @@
                         {% for item in gallery %}
                         <li data-app-prevent-settings="" data-target="#lb-gallery1-6" {% if forloop.last %}class=" active"{% endif %} data-slide-to="{{ forloop.counter }}"></li>
                         {% endfor %}
-                        {% comment %}<li data-app-prevent-settings="" data-target="#lb-gallery1-6" class=" active" data-slide-to="3"></li>{% endcomment %}
                     </ol>
                     <div class="carousel-inner">
                         {% for item in gallery %}

@@ -15,7 +15,7 @@
     {% block breadcrumbs %}
         <div class="container">
             <div class="col-sm-8 mbr-inner-padding mbr-table-cell-lg">
-                <p><a href="{% url 'index' %}">Home</a> &gt; Pytania i odpowiedzi</p>
+                <p><a href="{% url 'index' %}">Strona główna</a> &gt; Pytania i odpowiedzi</p>
             </div>
         </div>
     {% endblock %}
@@ -33,10 +33,13 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 lead">
                         {% for question in questions_answers %}
-                            <h4>Pytanie:</h4>
+                            <div>
+                                <h5>#{{ forloop.counter }}</h5>
+                            <h5>Pytanie:</h5>
                             <p>{{ question.question }}</p>
-                            <h4>Odpowiedź:</h4>
+                            <h5>Odpowiedź:</h5>
                             <p>{{ question.answer }}</p>
+                            </div>
                         {% endfor %}
                         <p><a href="{% url 'question' %}">Zadaj pytanie</a></p>
                     </div>

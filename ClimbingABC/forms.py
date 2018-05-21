@@ -6,4 +6,4 @@ class QuestionForm(forms.ModelForm):
 
     class Meta:
         model = QuestionAnswer
-        fields = ('question', 'author',)
+        fields = ('title', 'question', 'author',)

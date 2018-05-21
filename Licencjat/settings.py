@@ -25,7 +25,7 @@ SECRET_KEY = '&olqh-sq37*wk&)96)2q0+p9wh8#2ly%ilm7*w@=k9p73+jeh8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['leszczyna.wzks.uj.edu.pl']
+ALLOWED_HOSTS = ['127.0.0.1', 'leszczyna.wzks.uj.edu.pl']
 
 
 # Application definition

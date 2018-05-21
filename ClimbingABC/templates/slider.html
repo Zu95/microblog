@@ -17,7 +17,7 @@
                                             <h2 class="mbr-section-title display-1">{{ post.title }}</h2>
                                             <p class="lead">{{ post.brief }}</p>
 
-                                            <div> <a class="btn btn-lg btn-secondary-outline" href="page3.html">Czytaj dalej...</a></div>
+                                            <div> <a class="btn btn-lg btn-secondary-outline" href="{% url 'article' category_id=post.category.id post_id=post.id %}">Czytaj dalej...</a></div>
                                         </div>
                                     </div>
                                 </div>

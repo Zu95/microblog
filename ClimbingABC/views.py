@@ -48,7 +48,7 @@ def question(request):
     else:
         form = QuestionForm()
     return render(request, 'question.html', {'categories': categories,
-                                             'form': form,})
+                                             'form': form})
 
 
 def question_asked(request):
@@ -61,3 +61,13 @@ def questionanswers(request):
     questions_answers = QuestionAnswer.objects.filter(published=True)
     return render(request, 'questions_answers.html', {'categories': categories,
                                                       'questions_answers': questions_answers})
+
+
+def project(request):
+    categories = Category.objects.all()
+    return render(request, 'project.html', {'categories': categories})
+
+
+def sources(request):
+    categories = Category.objects.all()
+    return render(request, 'sources.html', {'categories': categories})

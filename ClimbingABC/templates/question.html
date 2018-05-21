@@ -15,7 +15,7 @@
     {% block breadcrumbs %}
         <div class="container">
             <div class="col-sm-8 mbr-inner-padding mbr-table-cell-lg">
-                <p><a href="{% url 'index' %}">Home</a> &gt; Zadaj pytanie instruktorowi</p>
+                <p><a href="{% url 'index' %}">Strona główna</a> &gt; Zadaj pytanie instruktorowi</p>
             </div>
         </div>
     {% endblock %}
@@ -25,7 +25,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h3 class="mbr-section-title display-4">Zadaj pytanie instruktorowi wspinania</h3>
+                        <h4 class="mbr-section-title display-4">Zadaj pytanie instruktorowi wspinania</h4>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,13 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 lead">
                         <form method="POST" class="post-form">{% csrf_token %}
-                            {{ form.as_p }}
+
+                                <p>Tytuł: {{ form.title }}</p>
+                                <p>Treść pytania:</p>
+                                <p>{{ form.question }}</p>
+                            <p>
+                                <label for="{{ form.author.id_for_label }}">Twoje imię:</label>
+                                {{ form.author }}</p>
                             <button type="submit" class="save btn btn-default">Wyślij</button>
                         </form>
                     </div>
