@@ -35,7 +35,7 @@
             </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2 lead">{{ post.text|safe }}.</div>
+            <div class="col-md-8 col-md-offset-2 lead">{{ post.text|safe|linebreaks }}.</div>
         </div>
     </div>
 </section>
@@ -46,9 +46,6 @@
             <div class="col-md-8 col-md-offset-2">
                 <figure class="mbr-figure">
                     <div><img src="{{ post.picture.url }}"></div>
-                    <figcaption class="mbr-figure-caption mbr-figure-caption-over">
-                        <div class="container">Opis obrazka</div>
-                    </figcaption>
                 </figure>
             </div>
         </div>
