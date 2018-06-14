@@ -1,4 +1,4 @@
-
+{% load static %}
 <section id="dropdown-menu-0" data-rv-view="262">
 
     <nav class="navbar navbar-dropdown transparent navbar-fixed-top bg-color">
@@ -6,7 +6,7 @@
         <div class="container">
 
             <div class="navbar-brand">
-                <a href="{% url 'index' %}" class="navbar-logo"><img src="http://wierzba.wzks.uj.edu.pl/~15_krzysztofik/Licencjat%20demo/assets/images/rappelling-153613-64x128.png" alt=""></a>
+                <a href="{% url 'index' %}" class="navbar-logo"><img src="{% static "assets/images/logo.png" %}" alt=""></a>
                 <a class="text-black" href="{% url 'index' %}">PORADNIK WSPINACZA</a>
             </div>
 
