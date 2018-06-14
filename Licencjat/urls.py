@@ -18,7 +18,7 @@ from django.conf.urls import include
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-import Licencjat
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +27,4 @@ urlpatterns = [
 
 if settings.DEBUG:
 
-    urlpatterns += static(Licencjat.settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
